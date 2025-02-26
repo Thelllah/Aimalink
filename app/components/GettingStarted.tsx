@@ -13,7 +13,7 @@ function GettingStarted() {
         </View>
         <View style={styles.textContainer}>
          <Text style={styles.desc}>Go and start enjoying our app features and say goodbye to the long ques</Text>
-         <TouchableOpacity onPress={()=>{router.push('/componentsGettingStarted2')}} style={styles.btn}>
+         <TouchableOpacity onPress={()=>{router.push('/components/GettingStarted2')}} style={styles.btn}>
            <Text style={{color:'#fff', fontSize:18, fontFamily:'Nunito'}}>Continue</Text>
            <MaterialIcons name="arrow-forward" size={20} color={"white"}/>
         </TouchableOpacity>
@@ -61,7 +61,7 @@ const styles= StyleSheet.create({
     width:"100%",
     paddingHorizontal:20,
     flexDirection:'row',
-    borderBlockColor:"#fff",
+    borderColor:"#fff",
     borderWidth:1,
     marginTop:30,
     padding:10,
