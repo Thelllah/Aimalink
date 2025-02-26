@@ -6,7 +6,7 @@ export default function HomeScreen() {
   const router= useRouter()
   return (
     <SafeAreaView style={styles.container}>
-      <TouchableOpacity style={styles.btn} onPress={()=>{router.push('/components/DriveDesc')}}>
+      <TouchableOpacity style={styles.btn} onPress={()=>{router.push('/components/GettingStarted')}}>
          <Text style={styles.text}>
           Continue
          </Text>

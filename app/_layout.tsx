@@ -7,6 +7,7 @@ import { useEffect } from 'react';
 import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
+import GettingStarted from './components/GettingStarted';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -14,13 +15,12 @@ SplashScreen.preventAutoHideAsync();
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-    Nunito: require('../assets/fonts/Nunito.ttf'),
-    NunitoItalic: require('../assets/fonts/Nunito-italic.ttf'),
-    Poppins: require('../assets/fonts/Poppins-Bold.ttf'),
-    PoppinsBlack: require('../assets/fonts/Poppins-Black.ttf'),
+    "SpaceMono": require('../assets/fonts/SpaceMono-Regular.ttf'),
+    "Nunito": require('../assets/fonts/Nunito.ttf'),
+    "NunitoItalic": require('../assets/fonts/Nunito-italic.ttf'),
+    "Poppins": require('../assets/fonts/Poppins-Bold.ttf'),
+    "PoppinsBlack": require('../assets/fonts/Poppins-Black.ttf'),
   });
-  console.log("Loaded fonts");
 
   useEffect(() => {
     if (loaded) {
@@ -29,13 +29,17 @@ export default function RootLayout() {
   }, [loaded]);
 
   if (!loaded) {
-    return null;
+    return null; // Or replace with a loading screen
   }
 
   return (
-    <ThemeProvider value={colorScheme === 'light' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    <ThemeProvider value={colorScheme === 'light' ? DefaultTheme : DarkTheme}>
+      <Stack 
+        initialRouteName="/componentsGettingStarted"
+        screenOptions={{ headerShown: false }} 
+      >
+        <Stack.Screen name="(tabs)" />
+        <Stack.Screen name="components" />
         <Stack.Screen name="+not-found" />
       </Stack>
       <StatusBar style="auto" />
