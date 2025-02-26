@@ -13,7 +13,7 @@ function GettingStarted() {
         </View>
         <View style={styles.textContainer}>
          <Text style={styles.desc}>Go and start enjoying our app features and say goodbye to the long ques</Text>
-         <TouchableOpacity onPress={()=>{router.push('/components/FindDrives')}} style={styles.btn}>
+         <TouchableOpacity onPress={()=>{router.push('./FindDrives')}} style={styles.btn}>
            <MaterialIcons name="arrow-forward" size={20} color={"white"}/>
         </TouchableOpacity>
         </View>

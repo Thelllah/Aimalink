@@ -16,7 +16,7 @@ function FilterDrives() {
 
   return (
     <SafeAreaView>
-      <HeaderStatus title={"Find Nearby Location"} onBackPress={() => { router.push('/components/FindDrives'); }} />
+      <HeaderStatus title={"Find Nearby Location"} onBackPress={() => { router.push('./FindDrives'); }} />
       <View style={styles.container}>
         <View style={styles.content}>
           <View style={styles.searchInput}>
@@ -65,6 +65,24 @@ function FilterDrives() {
            <Text style={{fontFamily:"Nunito", color:"#EC3333",textDecorationLine:"underline"}}>See on Map</Text>
            <MaterialIcons name='map' size={20} color={"#EC3333"} />
         </TouchableOpacity>
+      </View>
+      <View style={styles.driveListing}>
+        <View style={styles.bloodDrive}>
+            <Image source={require('@/assets/images/hospital.png')} style={styles.img}/>
+            <View style={{flex:1}}>
+                <Text style={styles.driveName}>University Teaching Hospital Huye(CHUB)</Text>
+                <View style={{display:"flex", flexDirection:'row', alignItems:"center",justifyContent:"space-between"}}>
+                    <Text>Huye, Rwanda</Text>
+                    <Text>2 km</Text>
+                </View>
+                <View>
+                    <Text>9 Appointments remaining</Text>
+                    <TouchableOpacity>
+                        <Text>View</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -154,6 +172,25 @@ const styles = StyleSheet.create({
     color:"#808080",
     fontFamily:"Poppins",
     fontSize:16
+  },
+  img:{
+    height:30,
+    width:30,
+  },
+  bloodDrive:{
+    paddingHorizontal:20,
+    display:"flex",
+    flexDirection:"row",
+    justifyContent:"space-between"
+  },
+  driveListing:{
+    flex:1,
+    justifyContent:"space-evenly",
+    marginTop:20
+  },
+  driveName:{
+    color:"#000",
+    fontFamily:"Poppins"
   }
 });
 

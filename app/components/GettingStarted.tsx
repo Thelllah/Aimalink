@@ -13,7 +13,7 @@ function GettingStarted() {
         </View>
         <View style={styles.textContainer}>
          <Text style={styles.desc}>Go and start enjoying our app features and say goodbye to the long ques</Text>
-         <TouchableOpacity onPress={()=>{router.push('/components/GettingStarted2')}} style={styles.btn}>
+         <TouchableOpacity onPress={()=>{router.push('./GettingStarted2')}} style={styles.btn}>
            <Text style={{color:'#fff', fontSize:18, fontFamily:'Nunito'}}>Continue</Text>
            <MaterialIcons name="arrow-forward" size={20} color={"white"}/>
         </TouchableOpacity>

@@ -11,7 +11,7 @@ function FindDrives() {
                 <Image source={require('@/assets/images/location.png')} style={styles.img}/>
                 <Text style={styles.title}>Find Nearby Drives</Text>
                 <Text style={styles.desc}>Looking to donate blood but not sure where to go? Our Nearby Drive Locator makes it simple! Find the closest blood donation drive in just a few clicks and make a life-saving impact.</Text>
-                <TouchableOpacity style={styles.btn} onPress={()=>router.navigate('/components/FilterDrives')}>
+                <TouchableOpacity style={styles.btn} onPress={()=>router.navigate('./FilterDrives')}>
                     <Text style={{ color: '#fff', fontFamily: "Nunito", fontWeight:"500", fontSize:18 }}>Continue</Text>
                     <MaterialIcons name="arrow-forward" size={22} color={'white'} />
                 </TouchableOpacity>
