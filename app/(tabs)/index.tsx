@@ -29,6 +29,7 @@ const styles = StyleSheet.create({
  },
  text:{
   fontFamily:"Nunito",
-  color:'#fff'
+  color:'#fff',
+  fontWeight:"500"
  }
 });
