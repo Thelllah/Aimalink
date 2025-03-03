@@ -13,6 +13,11 @@ function BloodDrive() {
         { id: '3', desc: "✔️ No recent illness, tattoos, or piercings (within the last 6 months)" },
         { id: '4', desc: "✔️ Well-hydrated and well-rested donors" },
     ];
+    const whocanCriteria = [
+        { id: '1', desc: "✔️ Save lives: Your donation can help accident victims, surgery patients, and those battling serious illnesses." },
+        { id: '2', desc: "✔️  Health Benefits – Donating blood improves circulation and stimulates new blood cell production." },
+        { id: '3', desc: "✔️ Community Impact – A strong blood supply ensures hospitals can provide urgent care when needed." }
+    ];
 
     return (
         <ScrollView style={styles.container}>
@@ -55,7 +60,18 @@ function BloodDrive() {
                     )}
                     
                 />
-                <TouchableOpacity style={styles.btn}>
+                <Text style={styles.title}>Why Donate</Text>
+                <FlatList
+                    data={whocanCriteria}
+                    keyExtractor={(item) => item.id}
+                    renderItem={({ item }) => (
+                        <View style={styles.item}>
+                            <Text style={styles.name}>{item.desc}</Text>
+                        </View>
+                    )}
+                    
+                />
+                <TouchableOpacity style={styles.btn} onPress={() => {router.push('/components/ScheduleApp')}}>
                     <Text style={{color:"white",fontFamily:"Poppins", padding:10}}>Schedule an appointment</Text>
                 </TouchableOpacity>
             </View>
